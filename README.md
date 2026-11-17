@@ -27,3 +27,7 @@
 이 저장소는 스킬과 협업 절차를 공유합니다. 실제 프로젝트의 Figma 파일, `DESIGN.md`, 토큰 값, React 앱은 포함하지 않습니다. `WORKFLOW.md`는 제안하는 운영 모델이며, 기존 스킬의 역할 문구를 아직 개정하지 않았습니다.
 
 `design-md/references/DESIGN_SPEC.md`는 Google의 DESIGN.md 사양에서 생성된 참조 파일입니다. 출처와 라이선스는 [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md)를 확인하세요.
+
+## 라이선스
+
+이 저장소의 원본 스킬·문서는 [Apache License 2.0](LICENSE)으로 배포합니다. Google 사양 참조 파일의 출처와 라이선스는 별도로 표시합니다.
