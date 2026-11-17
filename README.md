@@ -34,9 +34,10 @@ Claude Code에서는 마지막 두 줄의 설치 위치를 `~/.claude/skills/`�
 ## 빠른 사용
 
 1. Figma 연결과 대상 파일·노드 접근 권한을 준비합니다.
-2. 디자이너가 디자인 시스템을 확정한 뒤 `design-md`를 실행합니다.
-3. 컴포넌트가 라이브러리에 게시되면 `components`, 이어서 `figma-implement`를 실행합니다.
-4. 페이지 프레임이 완성되면 `figma-implement`로 라우트를 구현합니다.
+2. 러프한 Figma 시스템에서 `design-md`로 초안 `DESIGN.md`만 만듭니다.
+3. Stitch가 보완한 문서를 디자이너가 검토·승인한 뒤 `design-md`로 최종 문서와 CSS·JSON을 생성합니다.
+4. 컴포넌트가 라이브러리에 게시되면 `components`, 이어서 `figma-implement`를 실행합니다.
+5. 페이지 프레임이 완성되면 `figma-implement`로 라우트를 구현합니다.
 
 각 스킬의 입력·검증 절차는 해당 `SKILL.md`를 따릅니다. `figma-implement`는 로드된 스킬의 설치 위치를 기준으로 검사 스크립트를 실행합니다.
 

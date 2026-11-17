@@ -26,11 +26,13 @@ Figma에서 결정한 디자인 시스템을 `DESIGN.md`로 문서화하고, 같
 
 1. 디자이너가 색상, 타이포그래피, 간격 등 최소 디자인 시스템을 Figma에 설계한다.
 2. 디자이너가 1차 완료를 확정하고 Figma 대상 URL을 에이전트에 제공한다.
-3. 에이전트가 `design-md`로 `DESIGN.md`, `tailwind.theme.css`, `tokens.studio.global.json`을 생성한다. `DESIGN.md` 형식은 번들된 Google 사양을 따른다.
-4. 디자이너가 결과를 검토하고 `DESIGN.md`를 Stitch에, JSON을 Tokens Studio에 적용한다. 이 과정에서 디자인을 조정하면 Figma 결정과 산출물을 다시 맞춘다.
-5. 디자이너가 동일한 토큰과 시스템을 사용해 컴포넌트를 만들고 Figma 라이브러리에 게시한다. Stitch를 사용할 수도 있고 Figma에서 직접 설계할 수도 있다.
-6. 개발자가 게시된 컴포넌트 노드 URL로 `components`를 실행한다. `COMPONENTS.md`에 Figma 이름·변형·코드 경로를 기록한다. 아직 구현하지 않은 경로는 `pending`으로 둔다.
-7. 개발자가 `figma-implement`로 React 컴포넌트를 구현한다. 구현된 경로로 `COMPONENTS.md`를 갱신한다.
+3. 에이전트가 `design-md`로 **초안 `DESIGN.md`만** 생성한다. 이 실행에서는 companion token artifacts 생성을 명시적으로 제외한다. `DESIGN.md` 형식은 번들된 Google 사양을 따른다.
+4. 디자이너가 초안을 Stitch에 전달한다. Stitch가 보완·수정한 `DESIGN.md`를 디자이너가 초안과 비교해 채택할 값을 확정한다.
+5. 에이전트가 승인된 Stitch 수정본을 기준으로 `design-md`를 다시 실행해 최종 `DESIGN.md`, `tailwind.theme.css`, `tokens.studio.global.json`을 생성·검증한다. 초기 Figma 초안 값으로 승인된 변경을 되돌리지 않는다.
+6. 디자이너가 최종 JSON을 Tokens Studio에 적용하고 Figma 파일 A의 디자인 시스템을 확정값과 맞춘다. 개발자는 같은 버전의 최종 `DESIGN.md`와 CSS를 코드베이스에 반영한다.
+7. 디자이너가 확정된 토큰과 시스템을 사용해 컴포넌트를 만들고 Figma 라이브러리에 게시한다. Stitch를 사용할 수도 있고 Figma에서 직접 설계할 수도 있다.
+8. 개발자가 게시된 컴포넌트 노드 URL로 `components`를 실행한다. `COMPONENTS.md`에 Figma 이름·변형·코드 경로를 기록한다. 아직 구현하지 않은 경로는 `pending`으로 둔다.
+9. 개발자가 `figma-implement`로 React 컴포넌트를 구현한다. 구현된 경로로 `COMPONENTS.md`를 갱신한다.
 
 디자인 시스템 또는 컴포넌트가 바뀌면 해당 단계부터 반복한다. 페이지 설계는 이 루프의 결과를 사용한다.
 
@@ -49,4 +51,4 @@ Figma에서 결정한 디자인 시스템을 `DESIGN.md`로 문서화하고, 같
 
 ## 현재 스킬과 운영 모델의 차이
 
-이 문서는 목표 협업 프로세스를 설명한다. 현재 `design-md`와 `figma-implement` 스킬에는 개발자가 `design-md`를 실행한다는 문구가 남아 있다. 또한 `design-md`는 프로젝트의 Tailwind·shadcn 설정을 확인하므로, 디자이너의 에이전트가 실행할 때도 해당 코드베이스를 읽을 수 있어야 완전한 산출물을 만들 수 있다. 스킬 자체는 이 문서를 만들면서 수정하지 않았다.
+이 문서는 목표 협업 프로세스를 설명한다. 현재 `design-md`와 `figma-implement` 스킬에는 개발자가 `design-md`를 실행한다는 문구가 남아 있다. `design-md`는 기본적으로 `DESIGN.md`와 companion token artifacts를 함께 만들지만, 초안 실행에서는 사용자가 산출물 생성을 명시적으로 제외할 수 있다. 최종 실행에는 프로젝트의 Tailwind·shadcn 설정을 확인하므로 디자이너의 에이전트도 해당 코드베이스를 읽을 수 있어야 완전한 산출물을 만들 수 있다. 스킬 자체는 이 문서를 만들면서 수정하지 않았다.
