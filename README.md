@@ -20,7 +20,7 @@
 4. 컴포넌트가 라이브러리에 게시되면 `components`, 이어서 `figma-implement`를 실행합니다.
 5. 페이지 프레임이 완성되면 `figma-implement`로 라우트를 구현합니다.
 
-각 스킬의 입력·검증 절차는 해당 `SKILL.md`를 따릅니다. 현재 `figma-implement/SKILL.md`의 Tailwind 검사 명령에는 작성자 컴퓨터의 절대 경로가 들어 있습니다. 다른 컴퓨터에서는 설치한 스킬 경로로 바꿔 실행해야 합니다.
+각 스킬의 입력·검증 절차는 해당 `SKILL.md`를 따릅니다. `figma-implement`는 로드된 스킬의 설치 위치를 기준으로 검사 스크립트를 실행합니다.
 
 ## 범위
 

@@ -131,10 +131,10 @@ Use this mapping before writing code:
 
 Prefer project token classes from `tailwind.theme.css` first (`text-*`, `leading-*`, `tracking-*`, `rounded-*`, `p-*`, `gap-*`, `border-*`, `bg-*`). Use arbitrary value utilities like `leading-[1.45]` only when the exact value is not represented by a token. Use arbitrary CSS properties (`[property:value]`) only when Tailwind has no utility family for that property.
 
-Before reporting completion, run the skill-provided checker against the files changed by the implementation. Do not add this checker to the target project; it belongs to this skill and is invoked from the skill directory:
+Before reporting completion, run the skill-provided checker against the files changed by the implementation. Do not add this checker to the target project. Resolve `FIGMA_IMPLEMENT_SKILL_DIR` from the parent directory of this loaded `SKILL.md` on the current machine (for example, via `dirname` on its actual path); do not assume a Codex, Claude, or user-specific install path. Then run:
 
 ```bash
-node /Users/93minki/.codex/skills/figma-implement/scripts/check-tailwind-canonical.mjs \
+node "$FIGMA_IMPLEMENT_SKILL_DIR/scripts/check-tailwind-canonical.mjs" \
   --root . \
   --files components/ui/example.tsx app/example/page.tsx
 ```
